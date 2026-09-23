@@ -8,7 +8,12 @@ function rupiah(number){
     maximumFractionDigits:0
   }).format(number);
 }
+function playPreview(audioFile){
+    const audio = document.getElementById("audioPreview");
 
+    audio.src = audioFile;
+    audio.play();
+}
 function scrollToProducts(){
   document.getElementById("products").scrollIntoView({behavior:"smooth"});
 }
