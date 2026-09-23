@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#111827" />
+  <title>FHARID RMX — Toko Digital</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-logo">FH<span>★</span>RID</div>
+        <div>
+          <h1>FHARID RMX</h1>
+          <p>Flm Enak Ya Cuman Di Fharid Rmx</p>
+        </div>
+      </div>
+      <button class="menu-btn" id="menuBtn" aria-label="Buka menu">☰</button>
+    </header>
+
+    <main class="content">
+      <section class="hero">
+        <div class="hero-glow"></div>
+        <div class="hero-inner">
+          <div>
+            <span class="eyebrow">DIGITAL STORE</span>
+            <h2>Produk remix pilihan<br><span>buat kebutuhanmu.</span></h2>
+            <p>Preview dulu, kalau cocok langsung checkout.</p>
+          </div>
+          <div class="hero-badge">RMX<br><small>STORE</small></div>
+        </div>
+      </section>
+
+      <section class="section-head">
+        <div>
+          <p class="section-kicker">PRODUK TERBARU</p>
+          <h2>Produk</h2>
+        </div>
+        <button class="filter-btn" onclick="scrollToProducts()">Lihat semua</button>
+      </section>
+
+      <section class="products" id="products">
+        <article class="product-card">
+          <div class="product-media">
+            <div class="fake-logo">
+              <div class="fake-logo-main">FHARID</div>
+              <div class="fake-logo-sub">remix</div>
+            </div>
+            <div class="duration">0:37</div>
+          </div>
+
+          <div class="product-info">
+            <h3>RADYA SPN - SELAIN<br>DONATUR VIRAL</h3>
+            <div class="price">Rp45.000</div>
+            <div class="sold">Terjual 13</div>
+
+            <div class="actions">
+              <button class="preview-btn" onclick="openPreview()">
+                <span>▶</span> Preview
+              </button>
+              <button class="buy-btn" onclick="openCheckout('RADYA SPN - SELAIN DONATUR VIRAL', 45000)">
+                <span>🛒</span> Buy
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-media alt">
+            <div class="fake-logo">
+              <div class="fake-logo-main">FHARID</div>
+              <div class="fake-logo-sub">remix</div>
+            </div>
+            <div class="duration">0:42</div>
+          </div>
+
+          <div class="product-info">
+            <h3>FHARID RMX - DJ VIRAL<br>FULL BASS</h3>
+            <div class="price">Rp35.000</div>
+            <div class="sold">Terjual 8</div>
+
+            <div class="actions">
+              <button class="preview-btn" onclick="openPreview()">
+                <span>▶</span> Preview
+              </button>
+              <button class="buy-btn" onclick="openCheckout('FHARID RMX - DJ VIRAL FULL BASS', 35000)">
+                <span>🛒</span> Buy
+              </button>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-item active" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <span>⌂</span><small>Dashboard</small>
+      </button>
+      <button class="nav-item" onclick="scrollToProducts()">
+        <span>🛍</span><small>Produk</small>
+      </button>
+    </nav>
+  </div>
+
+  <!-- Preview modal -->
+  <div class="modal" id="previewModal" onclick="closePreview(event)">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <button class="close" onclick="closePreview()">×</button>
+      <div class="modal-logo">FHARID <span>★</span> RMX</div>
+      <h3>Preview Produk</h3>
+      <p>Ganti bagian audio di script.js dengan file preview milikmu.</p>
+      <audio controls>
+        <source src="" type="audio/mpeg" />
+      </audio>
+      <button class="buy-full" onclick="closePreview(); openCheckout('RADYA SPN - SELAIN DONATUR VIRAL', 45000)">
+        Beli Produk — Rp45.000
+      </button>
+    </div>
+  </div>
+
+  <!-- Checkout modal -->
+  <div class="modal" id="checkoutModal" onclick="closeCheckout(event)">
+    <div class="modal-box checkout">
+      <button class="close" onclick="closeCheckout()">×</button>
+      <span class="eyebrow">CHECKOUT</span>
+      <h3 id="checkoutProduct">Nama Produk</h3>
+      <div class="checkout-price" id="checkoutPrice">Rp0</div>
+
+      <label>Nama</label>
+      <input id="buyerName" type="text" placeholder="Nama kamu" />
+
+      <label>Nomor WhatsApp</label>
+      <input id="buyerPhone" type="tel" placeholder="08xxxxxxxxxx" />
+
+      <button class="buy-full" onclick="orderViaWhatsApp()">Pesan via WhatsApp</button>
+      <p class="tiny">Setelah pembayaran dikonfirmasi, kamu bisa menerima file/link produk secara manual.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
