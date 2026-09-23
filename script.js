@@ -47,10 +47,10 @@ function orderViaWhatsApp(){
   }
 
   // GANTI NOMOR INI dengan nomor WhatsApp penjual.
-  const sellerNumber = "6281234567890";
+  const sellerNumber = "6282322733518";
 
   const text =
-    `Halo FHARID RMX,%0A` +
+    `Halo DANN RMX,%0A` +
     `Saya mau membeli:%0A` +
     `Produk: ${selectedProduct}%0A` +
     `Harga: ${rupiah(selectedPrice)}%0A` +
